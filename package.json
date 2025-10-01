@@ -1,0 +1,20 @@
+{
+  "name": "search-proxy-service",
+  "version": "1.0.0",
+  "description": "Secure search proxy service for Serper API",
+  "main": "Search/index.js",
+  "scripts": {
+    "start": "node Search/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["proxy", "search", "api"],
+  "author": "",
+  "license": "ISC"
+}

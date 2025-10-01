@@ -5,7 +5,7 @@ const express = require('express');
 const axios = require('axios');
 const crypto = require('crypto');
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Security configuration - use a consistent default for development
 const INTERNAL_SECRET = process.env.INTERNAL_SECRET || 'development-internal-secret-for-mvp-only';
@@ -86,7 +86,7 @@ app.post('/proxy-search', authenticateInternalRequest, async (req, res) => {
   }
 });
 
-app.listen(PORT, '127.0.0.1', () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🔍 Search Proxy running on port ${PORT}`);
   console.log(`🔒 Secure proxy with authentication enabled`);
   console.log(`🔑 API Key configured: ${process.env.SERPER_API_KEY ? 'Yes' : 'No'}`);
